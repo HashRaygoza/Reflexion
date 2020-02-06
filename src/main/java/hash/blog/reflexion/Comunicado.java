@@ -55,4 +55,10 @@ public class Comunicado {
     public void setMensaje(String mensaje) {
         this.mensaje = mensaje;
     }
+    
+    public void metodo() {
+        System.out.println("Emitiendo comunicado");
+    }
+    
+    
 }

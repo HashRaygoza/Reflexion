@@ -44,7 +44,10 @@ public class App {
                 System.out.println((String) reflexion.callGetter(resultado, campo));
             }
             
-        } catch (IntrospectionException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
+            reflexion.callMethod(resultado, "metodo");
+            reflexion.callMethod(comunicado, "metodo");
+            
+        } catch (IntrospectionException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException ex) {
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
         }
 

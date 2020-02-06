@@ -56,5 +56,9 @@ public class ResultadoAnalisis {
         this.instrumento = instrumento;
     }
     
+    public void metodo(){
+        System.out.println("Analisis completo");
+    }
+    
     
 }

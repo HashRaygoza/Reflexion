@@ -6,8 +6,10 @@
 package hash.blog.reflexion;
 
 import java.beans.IntrospectionException;
+import java.beans.MethodDescriptor;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 /**
  *
@@ -28,6 +30,13 @@ public class Reflexion {
 
         pd = new PropertyDescriptor(fieldName, obj.getClass());
         return pd.getReadMethod().invoke(obj);
+    }
+    
+    public void callMethod(Object obj, String metodo) throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+        MethodDescriptor md;
+        Method m = obj.getClass().getMethod(metodo);
+        
+        m.invoke(obj);        
     }
 
 }
