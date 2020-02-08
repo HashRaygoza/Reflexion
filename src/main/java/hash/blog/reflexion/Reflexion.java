@@ -17,26 +17,27 @@ import java.lang.reflect.Method;
  */
 public class Reflexion {
 
-    public void callSetter(Object obj, String fieldName, Object value) throws IntrospectionException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-        PropertyDescriptor pd;
+    public void callSetter(Object objeto, String nombreCampo, Object valor) throws IntrospectionException, 
+            IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        PropertyDescriptor descriptor;
 
-        pd = new PropertyDescriptor(fieldName, obj.getClass());
-        pd.getWriteMethod().invoke(obj, value);
-
+        descriptor = new PropertyDescriptor(nombreCampo, objeto.getClass());
+        descriptor.getWriteMethod().invoke(objeto, valor);
     }
 
-    public Object callGetter(Object obj, String fieldName) throws IntrospectionException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-        PropertyDescriptor pd;
+    public Object callGetter(Object objeto, String nombreCampo) throws IntrospectionException, 
+            IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        PropertyDescriptor descriptor;
 
-        pd = new PropertyDescriptor(fieldName, obj.getClass());
-        return pd.getReadMethod().invoke(obj);
+        descriptor = new PropertyDescriptor(nombreCampo, objeto.getClass());
+        return descriptor.getReadMethod().invoke(objeto);
     }
-    
-    public void callMethod(Object obj, String metodo) throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
-        MethodDescriptor md;
-        Method m = obj.getClass().getMethod(metodo);
-        
-        m.invoke(obj);        
+
+    public void callMethod(Object objeto, String nombreMetodo) throws NoSuchMethodException, 
+            IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        Method metodo = objeto.getClass().getMethod(nombreMetodo);
+
+        metodo.invoke(objeto);
     }
 
 }
