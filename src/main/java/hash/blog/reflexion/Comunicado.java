@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package hash.blog.reflexion;
 
-/**
- *
- * @author david
- */
 public class Comunicado {
     private String encabezado;
     private String departamento;
@@ -59,6 +50,4 @@ public class Comunicado {
     public void metodo() {
         System.out.println("Emitiendo comunicado");
     }
-    
-    
 }

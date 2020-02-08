@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package hash.blog.reflexion;
 
-/**
- *
- * @author david
- */
 public class ResultadoAnalisis {
     private String cantidad;
     private String resultado;
@@ -59,6 +50,4 @@ public class ResultadoAnalisis {
     public void metodo(){
         System.out.println("Analisis completo");
     }
-    
-    
 }
